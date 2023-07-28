@@ -37,12 +37,15 @@ void FindArithmeticMeanColumns(int [,] massiv)
 {
     for(int i = 0; i < massiv.GetLength(1); i++)
     {
-         int sumOfNumbersColumns = 0;
+         int numberOfColumns =0;
+         double arithmeticMean = 0;
         for(int j = 0; j < massiv.GetLength(0); j++)
         {
-           sumOfNumbersColumns += massiv[j,i];
+            numberOfColumns = j;
+          arithmeticMean += massiv[j,i];
         }
-        Console.WriteLine($"Сумма цифр колонки {i + 1} = {sumOfNumbersColumns}");
+        arithmeticMean /= (numberOfColumns + 1);
+        Console.WriteLine($"Среднее арифмитическое колонки {i + 1} = {arithmeticMean}");
     }
 
 }
